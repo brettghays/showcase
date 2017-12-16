@@ -19,7 +19,6 @@ export default class FilterObject extends Component {
     filterArray(val){
         let unfiltered = this.state.unFilteredArray
         let filtered = unfiltered.filter(x => x[val])
-        console.log(filtered)
         this.setState({
             filteredArray: filtered,
         })
