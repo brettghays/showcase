@@ -16,10 +16,13 @@ export default class FilterObject extends Component {
         })
     }
 
-    filterArray(y){
+    filterArray(val){
         let unfiltered = this.state.unFilteredArray
-        let filtered = unfiltered.filter(x => x['eyeColor'])
+        let filtered = unfiltered.filter(x => x[val])
         console.log(filtered)
+        this.setState({
+            filteredArray: filtered,
+        })
     }
 
     render() {
@@ -27,7 +30,7 @@ export default class FilterObject extends Component {
             <div className="puzzleBox filterObjectPB">
                 <h4>Filter Object</h4>
                 <span className="puzzleText">Unfiltered Array: {JSON.stringify(this.state.unFilteredArray)}</span>
-                <input type="text" placeholder="'name' or 'age' or 'eyeColor'" className="inputLine" onChange={(e) => this.updateUserInput(e.target.value)} />
+                <input type="text" placeholder="name or age or eyeColor" className="inputLine" onChange={(e) => this.updateUserInput(e.target.value)} />
                 <button className="confirmationButton" onClick={() => {this.filterArray(this.state.userInput)}}>Filter</button>
                 <span className="resultsBox filterObjectPB">Filtered Array: {JSON.stringify(this.state.filteredArray)}</span>
             </div>
