@@ -18,7 +18,7 @@ export default class FilterObject extends Component {
 
     filterArray(y){
         let unfiltered = this.state.unFilteredArray
-        let filtered = unfiltered.filter((x,y) => x[y])
+        let filtered = unfiltered.filter(x => x['eyeColor'])
         console.log(filtered)
     }
 
