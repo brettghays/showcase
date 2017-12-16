@@ -28,6 +28,7 @@ export default class FilterString extends Component {
             filteredArray: filteredArray
         })
     }
+    
     render(){
         return(
             <div  className="puzzleBox filterStringPB">
